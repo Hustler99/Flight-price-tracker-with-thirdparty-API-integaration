@@ -1,3 +1,34 @@
+This project allows users to track flight prices using third-party APIs (Amadeus). Users can register, login, create flight search requests, and get structured flight offers including airline, price, departure, and arrival times.
+
+<h1>Features</h1>
+
+  1-User registration & authentication (JWT)
+
+  2- Create flight search requests
+
+  3- Fetch real-time flight prices from Amadeus API
+
+  4- Store requests and results in PostgreSQL database
+
+  5 - Get all flight requests for a user
+
+<h2>Environment Variables</h2>
+<p>Create a <code>.env</code> file in the root of your project with the following content:</p>
+
+<pre>
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_USERNAME=your_db_username
+DATABASE_PASSWORD=your_db_password
+DATABASE_NAME=flight_db
+
+AMADEUS_CLIENT_ID=your_amadeus_client_id
+AMADEUS_CLIENT_SECRET=your_amadeus_client_secret
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRES_IN=your_expire_duration
+</pre>
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
