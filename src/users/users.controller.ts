@@ -23,7 +23,6 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Post('/register')
-  @UseInterceptors()
   create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.registerUser(createUserDto);
   }

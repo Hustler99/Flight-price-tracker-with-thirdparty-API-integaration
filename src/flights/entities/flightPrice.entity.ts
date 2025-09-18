@@ -27,7 +27,7 @@ export class FlightPrice {
   @Column({ type: 'timestamp' })
   arrivalTime: Date;
 
-  @OneToOne(() => Flight, (flightreq) => flightreq.req)
+  @OneToOne(() => Flight, (flightreq) => flightreq.res)
   @JoinColumn()
   req: Flight;
 }

@@ -16,11 +16,11 @@ import { JwtPayload } from 'jsonwebtoken';
 import type { JWTPayloadType } from 'src/utils/types';
 
 @Controller('/api/flights')
+@UseGuards(AuthGuard)
 export class FlightsController {
   constructor(private readonly flightsService: FlightsService) {}
 
   @Post()
-  @UseGuards(AuthGuard)
   async create(
     @Body() createFlightDto: CreateFlightReqDto,
     @CurrentUser() payLoad: JWTPayloadType,
@@ -29,17 +29,7 @@ export class FlightsController {
   }
 
   @Get()
-  findAll() {
-    return this.flightsService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.flightsService.findOne(+id);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.flightsService.remove(+id);
+  async findAll(@CurrentUser() payLoad: JWTPayloadType) {
+    return await this.flightsService.findAllRequestsByUser(payLoad.id);
   }
 }

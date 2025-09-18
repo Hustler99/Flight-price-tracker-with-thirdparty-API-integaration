@@ -22,12 +22,14 @@ export class Flight {
   @Column({ type: 'timestamp' })
   travelDate: string;
 
-  @Column({ type: 'timestamp',default: () => 'CURRENT_TIMESTAMP(6)' })
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP(6)' })
   createdAt: Date;
 
-  @ManyToOne(()=> User ,(user)=>user.flights)
-  user:User;
+  @ManyToOne(() => User, (user) => user.flights)
+  user: User;
 
-  @OneToOne(()=> FlightPrice, (flightprice)=>flightprice.req)
-  req:FlightPrice
+  @OneToOne(() => FlightPrice, (flightprice) => flightprice.req, {
+    cascade: true,
+  })
+  res: FlightPrice;
 }

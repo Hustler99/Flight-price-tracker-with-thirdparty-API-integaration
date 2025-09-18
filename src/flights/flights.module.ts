@@ -13,7 +13,7 @@ import { FlightPrice } from './entities/flightPrice.entity';
 
 @Module({
   imports: [
-    ConfigModule, // make sure ConfigService is available
+    ConfigModule,
     TypeOrmModule.forFeature([Flight, FlightPrice]),
     UsersModule,
     JwtModule.registerAsync({
