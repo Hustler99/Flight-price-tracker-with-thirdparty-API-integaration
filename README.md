@@ -1,4 +1,4 @@
-This project allows users to track flight prices using third-party APIs (Amadeus). Users can register, login, create flight search requests, and get structured flight offers including airline, price, departure, and arrival times.
+<b>This project allows users to track flight prices using third-party APIs (Amadeus). Users can register, login, create flight search requests, and get structured flight offers including airline, price, departure, and arrival times</b>
 
 <h1>Features</h1>
 
